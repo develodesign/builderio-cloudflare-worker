@@ -4,6 +4,7 @@ export default {
     // Configurable Values
     const BUILDERIO_USE_STATIC_URL = false;
     const BUILDERIO_STATIC_URL = '/builderio-page'
+    const BUILDERIO_API_URL = 'https://cdn.builder.io/api/v1/html';
     const BUILDER_IO_MODEL_TYPE = 'page'
 
     const PLACEHOLDER_TOKEN = '{{builderio}}'
@@ -19,9 +20,8 @@ export default {
 
     if (originResponseHtml.includes(PLACEHOLDER_TOKEN)) {
 
-      //Fetch response from BuilderIO
       let builderApiUrl = BUILDERIO_USE_STATIC_URL ? BUILDERIO_STATIC_URL : url.pathname;
-      builderApiUrl = `https://cdn.builder.io/api/v1/html/${BUILDER_IO_MODEL_TYPE}?apiKey=${env.BUILDER_API_KEY}&url=${builderApiUrl}`   
+      builderApiUrl = `${BUILDERIO_API_URL}/${BUILDER_IO_MODEL_TYPE}?apiKey=${env.BUILDER_API_KEY}&url=${builderApiUrl}`  
       const builderResponse = await fetch(builderApiUrl, {
         method: 'GET',
         headers: {
@@ -32,7 +32,6 @@ export default {
       const error = SHOW_ERROR_WARNING ? WARNING_MESSAGE_CONTENT : ''
       const builderHtml = builderData?.data?.html || error
       
-      // Replace Placeholders with Builder.io content then combine and return the response
       const replaceWidgetInstances = (html, widgetHtml, positionIndex, replaceAll) => {
         if (replaceAll) {
           const placeholderRegex = new RegExp(PLACEHOLDER_TOKEN.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
@@ -50,7 +49,8 @@ export default {
         }
       };
 
-      originResponseHtml = replaceWidgetInstances(originResponseHtml,builderHtml,
+      originResponseHtml = replaceWidgetInstances(originResponseHtml,
+        builderHtml,
         REPLACE_PLACEHOLDER_INSTANCE_POSITION_INDEX,
         REPLACE_ALL_PLACEHOLDER_INSTANCES
       );
