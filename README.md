@@ -14,9 +14,12 @@ Create a new Cloudflare Webworker on the CF Account level
 
 ![Screenshot of the Cloudflare Variables and Secrets screen.](https://www.develodesign.co.uk/images/builderio/builderio-create-cloudflareworker.png)
 
+
+
+
 ### Worker Code
 Add the content from this respositories [Builderio-CF-Worker.js](Builderio-CF-Worker.js)
- as a new Web Worker script.
+ as the new Web Worker's script.
 
 
 ### API Key
@@ -31,13 +34,14 @@ Inside of a Cloudflare enabled domain add a new Worker Route to your new worker 
 
 
 ## Setup BuilderIO 
-Create a Page Content in Builder.io with the same URL as passed from your worker URL param.
+Create a Page Content in Builder.io with the same URL as passed from your worker URL param. *Ensure you Publish the page*
 
 ![Screenshot of the Cloudflare  new Worker Route screen.](https://www.develodesign.co.uk/images/builderio/builder-io-content-page.png)
 
 
 ## Your Website 
 Create a page on your website with a matching URL that is entered in the static url field or follows the same structure as the dynamic URL path e.g /io/* if not using static URLs.
+
 ![Screenshot Creating a CMS page with the placeholder and matching urln.](https://www.develodesign.co.uk/images/builderio/magento-builder-io.png)
 
 
