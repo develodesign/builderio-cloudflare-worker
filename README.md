@@ -52,3 +52,7 @@ To use the Builder.io Preview functionality install the Chrome Browser plugin or
 
 ### Vistit the Page on your website that has the {{builderio}} plalceholdler string and it should be replaced with your dynamic Builder.io content.
 
+## Example
+Here's the final result, full Edge Side rendering which is great for users and SEO
+[https://builderio.develo.design/builderio-page](https://builderio.develo.design/builderio-page)
+
