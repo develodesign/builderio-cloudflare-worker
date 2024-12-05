@@ -1,5 +1,5 @@
-# Builder.io Cloudflare Webworker
-A Cloudflare Web Worker for easily integrating the Builder.io CMS system into a any website by replacing a string token {{builderio}} in the response..
+# Builder.io and Cloudflare Worker Intergration
+A Cloudflare Worker for easily integrating the Builder.io CMS system into a any website by replacing a string token {{builderio}} in the response..
 
 A Fetch to the matching builderIO page content is made and the combined response is then returned to the user. 
 
@@ -9,8 +9,8 @@ Additional features to be added will include
 
 ## Installation
 
-### Create Web Worker
-Create a new Cloudflare Webworker on the CF Account level
+### Create Worker
+Create a new Cloudflare Worker on the CF Account level
 
 ![Screenshot of the Cloudflare Variables and Secrets screen.](https://www.develodesign.co.uk/images/builderio/builderio-create-cloudflareworker.png)
 
@@ -19,7 +19,9 @@ Create a new Cloudflare Webworker on the CF Account level
 
 ### Worker Code
 Add the content from this respositories [Builderio-CF-Worker.js](Builderio-CF-Worker.js)
- as the new Web Worker's script.
+ as the new Worker's script.
+![Screenshot of the Cloudflare Worker Screenshot.](https://www.develodesign.co.uk/images/builderio/worker.png)
+
 
 
 ### API Key
